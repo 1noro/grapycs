@@ -21,13 +21,16 @@ from graphic.gameElements.arrow_map import ArrowMap
 import languages
 from languages import *
 
+# --- TEMPORAL IMPORTS ---------------------------------------------------------
+import random
+
 ### EDITABLE VARIABLES #########################################################
 lang = en.EN
 verbose = True
 
-sqpx = 23 # 10/15/40... (square size in px) (stdsize)
-vsqW = 31 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
-vsqH = 31 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
+sqpx = 5 # 10/15/40... (square size in px) (stdsize)
+vsqW = 150 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
+vsqH = 150 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
 
 ### AUTOMATIC VARIABLES ########################################################
 vsqpxW = sqpx * vsqW # number of visible squares WIDTH in px (pxscope)
@@ -113,18 +116,28 @@ def main():
     # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
 
+    pressed_keys = []
+
     # -------- Main Program Loop -----------------------------------------------
     while not done:
+        pressed_keys = pygame.key.get_pressed()
+
         # --- Event Processing & logic
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 done = True
                 # pygame.quit()
 
+        if event.type == pygame.KEYDOWN:
+            if (pressed_keys[pygame.K_ESCAPE]):
+                print('[ESCP] '+lang.exiting)
+                done = True
+
         # --- Drawing
+        screen.fill(stdCs.BG)
         # SQRectangle(1, 1, 1, 2, sqpx, stdCs.LIGHT_BLUE).draw(screen)
         # SQSquare(1, 3, 1, sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
-        ArrowMap(1, 1, sqpx).draw(screen)
+        ArrowMap(vsqW - 4 - (4*3), 4, sqpx).draw(screen, pressed_keys)
 
         # --- Wrap-up
         clock.tick(60) # Limit to 60 frames per second

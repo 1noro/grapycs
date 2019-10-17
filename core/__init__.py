@@ -26,14 +26,16 @@ level_color_scheme = color.Scheme2
 game_color_scheme = color.Scheme2
 
 sqpx = 40 # 10/15/40... (square size in px) (stdsize)
-vsq_w = 15 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
-vsq_h = 15 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
+vsqW = 15 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
+vsqH = 15 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
 
 ### AUTOMATIC VARIABLES ########################################################
-vsq_px_w = sqpx * vsq_w # number of visible squares WIDTH in px (pxscope)
-vsq_px_h = sqpx * vsq_h # number of visible squares HEIGHT in px (pxscope)
-sqcenter = int((vsq / 2) + 0.5) # screen square center (cellcenter)
-pxcenter = (pxscope / 2) - (stdsize / 2) # screen pixel center (pxcenter)
+vsqpxW = sqpx * vsqW # number of visible squares WIDTH in px (pxscope)
+vsqpxH = sqpx * vsqH # number of visible squares HEIGHT in px (pxscope)
+sqcenterW = int((vsqW / 2) + 0.5) # screen square center WIDTH (cellcenter)
+sqcenterH = int((vsqH / 2) + 0.5) # screen square center HEIGHT (cellcenter)
+pxcenterW = (vsqpxW / 2) - (vsqpxW / 2) # screen pixel center WIDTH (pxcenter)
+pxcenterH = (vsqpxH / 2) - (vsqpxH / 2) # screen pixel center HEIGHT (pxcenter)
 
 psv = python_short_version = re.compile(r'([0-9]\.[0-9])\.[0-9] ').match(sys.version).group(1)
 
@@ -54,7 +56,7 @@ def main():
     global verbose, lang, version_file, icon_file, font_file
 
     # --- MAIN VARIABLES -------------------------------------------------------
-    width, height = pxscope, pxscope # window size
+    width, height = vsqpxW, vsqpxH # window size
 
     # --- state control
     # 0 - menu
@@ -103,7 +105,7 @@ def main():
     # Set the height and width of the screen
     size = [width, height]
     screen = pygame.display.set_mode(size)
-    pygame.display.set_caption("FASTMIND " + shortversion)
+    pygame.display.set_caption("GRAPYCS " + shortversion)
     logo = pygame.image.load(icon_file)
     pygame.display.set_icon(logo)
     # Loop until the user clicks the close button.

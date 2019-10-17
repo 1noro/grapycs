@@ -19,20 +19,28 @@ class ArrowMap:
         # 2 - left
         # 3 - down
         # 4 - right
-        switch (active):
-            case 1:
-                SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
-                SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                break
-            case 1:
-                SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
-                SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-            case 1:
-                SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
-                SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
-                SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        if (active == 1):
+            SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
+            SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        else if (active == 2):
+            SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
+            SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        else if (active == 3):
+            SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
+            SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        else if (active == 4):
+            SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
+            SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        else:
+            SQSquare(self.sqx+1, self.sqy, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)
+            SQSquare(self.sqx+1, self.sqy+1, 1, self.sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
+            SQSquare(self.sqx+2, self.sqy+1, 1, self.sqpx, stdCs.LIGHT_BLUE).draw(screen)

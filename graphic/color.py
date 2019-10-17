@@ -71,3 +71,9 @@ class Scheme3:
     LIGHT_BLUE2     = (168, 218, 220)
     QUEEN_BLUE2     = ( 69, 123, 157)
     SPACE_CADET     = ( 29,  53,  87)
+
+### COLOR SCHEMES ##############################################################
+stdCs = Scheme2 # standard color scheme
+menu_color_scheme = Scheme2
+level_color_scheme = Scheme2
+game_color_scheme = Scheme2

@@ -10,12 +10,13 @@ import contextlib
 with contextlib.redirect_stdout(None):
     import pygame
 
-import graphic
-from graphic import color
+from graphic.color import stdCs
 # from graphic import displays
 from graphic.elements.rectangle import Rectangle
 from graphic.elements.sq_rectangle import SQRectangle
 from graphic.elements.sq_square import SQSquare
+
+from graphic.gameElements.arrow_map import ArrowMap
 
 import languages
 from languages import *
@@ -23,11 +24,6 @@ from languages import *
 ### EDITABLE VARIABLES #########################################################
 lang = en.EN
 verbose = True
-
-stdCs = color.Scheme2 # standard color scheme
-menu_color_scheme = color.Scheme2
-level_color_scheme = color.Scheme2
-game_color_scheme = color.Scheme2
 
 sqpx = 23 # 10/15/40... (square size in px) (stdsize)
 vsqW = 31 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
@@ -123,11 +119,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 done = True
-                pygame.quit()
+                # pygame.quit()
 
         # --- Drawing
-        SQRectangle(1, 1, 1, 2, sqpx, stdCs.LIGHT_BLUE).draw(screen)
-        SQSquare(1, 3, 1, sqpx, stdCs.YANKEES_BLUE).draw(screen)
+        # SQRectangle(1, 1, 1, 2, sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        # SQSquare(1, 3, 1, sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
+        ArrowMap(1, 1, sqpx).draw(screen)
 
         # --- Wrap-up
         clock.tick(60) # Limit to 60 frames per second

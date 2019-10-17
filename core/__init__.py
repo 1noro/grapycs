@@ -13,6 +13,9 @@ with contextlib.redirect_stdout(None):
 import graphic
 from graphic import color
 # from graphic import displays
+from graphic.elements.rectangle import Rectangle
+from graphic.elements.sq_rectangle import SQRectangle
+from graphic.elements.sq_square import SQSquare
 
 import languages
 from languages import *
@@ -21,6 +24,7 @@ from languages import *
 lang = en.EN
 verbose = True
 
+stdCs = color.Scheme2 # standard color scheme
 menu_color_scheme = color.Scheme2
 level_color_scheme = color.Scheme2
 game_color_scheme = color.Scheme2
@@ -122,6 +126,8 @@ def main():
                 pygame.quit()
 
         # --- Drawing
+        SQRectangle(1, 1, 1, 2, sqpx, stdCs.LIGHT_BLUE).draw(screen)
+        SQSquare(1, 3, 1, sqpx, stdCs.YANKEES_BLUE).draw(screen)
 
         # --- Wrap-up
         clock.tick(60) # Limit to 60 frames per second

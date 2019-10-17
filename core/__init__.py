@@ -29,9 +29,9 @@ menu_color_scheme = color.Scheme2
 level_color_scheme = color.Scheme2
 game_color_scheme = color.Scheme2
 
-sqpx = 40 # 10/15/40... (square size in px) (stdsize)
-vsqW = 15 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
-vsqH = 15 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
+sqpx = 23 # 10/15/40... (square size in px) (stdsize)
+vsqW = 31 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
+vsqH = 31 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
 
 ### AUTOMATIC VARIABLES ########################################################
 vsqpxW = sqpx * vsqW # number of visible squares WIDTH in px (pxscope)

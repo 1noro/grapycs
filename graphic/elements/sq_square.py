@@ -13,9 +13,12 @@ class SQSquare(Rectangle):
         self.width=sqWidth * sqpx
         self.height=sqWidth * sqpx
         self.color=color
+
+        self.sqpx=sqpx
         self.sqx=sqx
         self.sqy=sqy
-        self.sqpx=sqpx
+        self.sqWidth=sqWidth
+        self.sqHeight=sqWidth
 
     # def set_sqpx(self, new_sqpx):
     #     self.width=new_sqpx

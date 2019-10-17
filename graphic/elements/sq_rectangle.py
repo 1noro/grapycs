@@ -13,6 +13,9 @@ class SQRectangle(Rectangle):
         self.width=sqWidth * sqpx
         self.height=sqHeight * sqpx
         self.color=color
+
+        self.sqpx=sqpx
         self.sqx=sqx
         self.sqy=sqy
-        self.sqpx=sqpx
+        self.sqWidth=sqWidth
+        self.sqHeight=sqHeight

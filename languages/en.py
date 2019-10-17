@@ -14,7 +14,7 @@ class EN:
     result_seconds =    "s"
 
     # --- Shell ----------------------------------------------------------------
-    wellcome_msg = "[INIT] Wellcome to FASTMIND ("
+    wellcome_msg = "[INIT] Wellcome to GRAPYCS ("
     wellcome_info = "[INFO] Using pygame ("
 
     version_warning = "[WARN] The 'version.txt' file could not be read"

@@ -10,13 +10,9 @@ import contextlib
 with contextlib.redirect_stdout(None):
     import pygame
 
-import core
-from core import key
-from core import cfunc as cf
-
 import graphic
 from graphic import color
-from graphic import displays
+# from graphic import displays
 
 import languages
 from languages import *
@@ -29,13 +25,15 @@ menu_color_scheme = color.Scheme2
 level_color_scheme = color.Scheme2
 game_color_scheme = color.Scheme2
 
-stdsize = 40 # 10/15/40...
-cellscope = 15 # ODD NUMBER def=15
+sqpx = 40 # 10/15/40... (square size in px) (stdsize)
+vsq_w = 15 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
+vsq_h = 15 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
 
 ### AUTOMATIC VARIABLES ########################################################
-pxscope = cellscope * stdsize
-cellcenter = int((cellscope / 2) + 0.5)
-pxcenter = (pxscope / 2) - (stdsize / 2)
+vsq_px_w = sqpx * vsq_w # number of visible squares WIDTH in px (pxscope)
+vsq_px_h = sqpx * vsq_h # number of visible squares HEIGHT in px (pxscope)
+sqcenter = int((vsq / 2) + 0.5) # screen square center (cellcenter)
+pxcenter = (pxscope / 2) - (stdsize / 2) # screen pixel center (pxcenter)
 
 psv = python_short_version = re.compile(r'([0-9]\.[0-9])\.[0-9] ').match(sys.version).group(1)
 
@@ -116,6 +114,10 @@ def main():
     # -------- Main Program Loop -----------------------------------------------
     while not done:
         # --- Event Processing & logic
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+                pygame.quit()
 
         # --- Drawing
 

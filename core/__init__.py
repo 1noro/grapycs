@@ -28,7 +28,7 @@ import random
 lang = en.EN
 verbose = True
 
-sqpx = 5 # 10/15/40... (square size in px) (stdsize)
+sqpx = 4 # 10/15/40... (square size in px) (stdsize)
 vsqW = 150 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
 vsqH = 150 # ODD NUMBER def=15 (number of visible squares HEIGHT) (cellscope)
 
@@ -138,6 +138,8 @@ def main():
         # SQRectangle(1, 1, 1, 2, sqpx, stdCs.LIGHT_BLUE).draw(screen)
         # SQSquare(1, 3, 1, sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
         ArrowMap(vsqW - 4 - (4*3), 4, sqpx).draw(screen, pressed_keys)
+
+        SQSquare(1, 1, 1, sqpx, stdCs.STAR_CMD_BLUE).draw(screen)
 
         # --- Wrap-up
         clock.tick(60) # Limit to 60 frames per second

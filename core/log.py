@@ -26,3 +26,4 @@ class p:
     def cout(txt):      print(bcolor.INFO       + "[--> ] " + txt + bcolor.ENDC)
     def sslcin(txt):    print(bcolor.INFO       + "[ <~~] " + txt + bcolor.ENDC)
     def sslcout(txt):   print(bcolor.INFO       + "[~~> ] " + txt + bcolor.ENDC)
+    def escp(txt):      print(bcolor.INFO       + "[ESCP] " + txt + bcolor.ENDC)

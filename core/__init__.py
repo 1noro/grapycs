@@ -28,7 +28,8 @@ import random
 
 ### EDITABLE VARIABLES #########################################################
 lang = en.EN
-verbose = True
+# verbose = True
+verbose = 4
 
 sqpx = 4 # 10/15/40... (square size in px) (stdsize)
 vsqW = 150 # ODD NUMBER def=15 (number of visible squares WIDTH) (cellscope)
@@ -81,16 +82,11 @@ def main():
     except:
         print(lang.version_warning)
 
-    # --- CMD INIT -------------------------------------------------------------
-    print(lang.wellcome_msg+version+")")
-    print(lang.wellcome_info+pygame.version.ver+")")
-
     # --- Parameters -----------------------------------------------------------
     parser = OptionParser()
     parser.add_option(
-        "-v", "--verbose", dest="verbose",
-        action="store_true", default=False,
-        help="print status messages to stdout.")
+        "-v", "--verbose", dest="vnum",
+        help="print status messages to stdout (VNUM >= 0 ).")
     parser.add_option(
         "-l", "--lang", dest="lang",
         help="changes the default language."
@@ -99,11 +95,16 @@ def main():
     (options, args) = parser.parse_args()
 
     # --- Verbose
-    verbose = options.verbose
+    if options.vnum and int(options.vnum) >= 0:
+        verbose = int(options.vnum)
 
     # --- Language
     if options.lang:
         lang = languages.set_lang(options.lang)
+
+    # --- CMD INIT -------------------------------------------------------------
+    if verbose > 0: log.p.info(lang.wellcome_msg+version+")")
+    if verbose > 0: log.p.info(lang.wellcome_info+pygame.version.ver+")")
 
     # --- PYGAME INIT ----------------------------------------------------------
     pygame.init()
@@ -137,7 +138,7 @@ def main():
 
         if event.type == pygame.KEYDOWN:
             if (pressed_keys[pygame.K_ESCAPE]):
-                print('[ESCP] '+lang.exiting)
+                log.p.escp(lang.exiting)
                 done = True
 
         # --- Drawing

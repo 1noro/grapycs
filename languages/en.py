@@ -14,8 +14,8 @@ class EN:
     result_seconds =    "s"
 
     # --- Shell ----------------------------------------------------------------
-    wellcome_msg = "[INIT] Wellcome to GRAPYCS ("
-    wellcome_info = "[INFO] Using pygame ("
+    wellcome_msg = "Wellcome to GRAPYCS ("
+    wellcome_info = "Using pygame ("
 
     version_warning = "[WARN] The 'version.txt' file could not be read"
     select_level_fail = "[FAIL] The selected level isn't in the list:"

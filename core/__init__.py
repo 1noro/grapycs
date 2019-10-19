@@ -10,8 +10,10 @@ import contextlib
 with contextlib.redirect_stdout(None):
     import pygame
 
+from . import log
+
 from graphic.color import stdCs
-# from graphic import displays
+from graphic import display
 from graphic.elements.rectangle import Rectangle
 from graphic.elements.sq_rectangle import SQRectangle
 from graphic.elements.sq_square import SQSquare
@@ -116,7 +118,12 @@ def main():
     # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
 
+    # --- GAME INIT ------------------------------------------------------------
     pressed_keys = []
+    # map = game.crete_base_map(vsqW, vsqH)
+    # print(len(map))
+    # print(len(map[0]))
+    # print(map)
 
     # -------- Main Program Loop -----------------------------------------------
     while not done:
